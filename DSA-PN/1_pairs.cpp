@@ -63,3 +63,5 @@ if(sz(p)==0) cout<<"NO SUCH PAIRS"<<endl;
 else cout<<p[0]<<","<<p[1]<<endl;
     return 0;
 }
+
+//hojare

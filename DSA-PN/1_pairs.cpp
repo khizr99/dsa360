@@ -18,7 +18,7 @@ typedef unordered_set<int> us;
 #define frc(a, b, c) for (char(a) = (b); (a) <= (c); ++(a))
 #define freach(a, b) for (auto&(a) : (b))
 #define rep(i, n) fr(i, 0, n)  //rep is simple for loop
-#define repn(i, n) frn(i, 1, n)//
+#define repn(i, n) frn(i, 1, n)
 #define sqr(x) ((LL)(x) * (x)) //sqr  = square
 #define fi first
 #define se second
@@ -27,10 +27,10 @@ typedef unordered_set<int> us;
 #define all(v) v.begin(), v.end()
 #define alla(arr, sz) arr, arr + sz
 #define sz(v) (int)v.size() //sz = size
-#define sort(v) sort(ALL(v))
-#define rev(v) reverse(ALL(v)) // rev = reverse
-#define sorta(arr, sz) sort(ALLA(arr, sz))
-#define reva(arr, sz) reverse(ALLA(arr, sz))
+#define sort(v) sort(all(v))
+#define rev(v) reverse(all(v)) // rev = reverse
+#define sorta(arr, sz) sort(alla(arr, sz))
+#define reva(arr, sz) reverse(alla(arr, sz))
 #define tc(t) while (t--)
 
 vi pairSum(vi arr, int sum){

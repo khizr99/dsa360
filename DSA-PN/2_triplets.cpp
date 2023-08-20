@@ -27,49 +27,58 @@ typedef unordered_set<int> us;
 #define all(v) v.begin(), v.end()
 #define alla(arr, sz) arr, arr + sz
 #define sz(v) (int)v.size() //sz = size
-#define sort(v) sort(ALL(v))
-#define rev(v) reverse(ALL(v)) // rev = reverse
-#define sorta(arr, sz) sort(ALLA(arr, sz))
-#define reva(arr, sz) reverse(ALLA(arr, sz))
+#define sort(v) sort(all(v))
+#define rev(v) reverse(all(v)) // rev = reverse
+#define sorta(arr, sz) sort(alla(arr, sz))
+#define reva(arr, sz) reverse(alla(arr, sz))
 #define tc(t) while (t--)
 
-vvi triplet(vi arr, int sum){
+//Using Sorting and two pointer approach
+vvi triplet(vi arr, int targetSum){
     vvi result;
-    us s;
-    rep(i,sz(arr)){
-        int newSum = sum-arr[i];
-        rep(j,sz(arr)){
-            j=i; ++j;
-            int x = newSum-arr[j];
-            if(s.find(x)!=s.end()){
-                vi v;
-                v.pb(arr[i]); v.pb(arr[j]); v.pb(x);
-                result.pb(v);
-
-            }//..
-
+    sort(arr); //sorting the vector
+    int n = sz(arr);
+    rep(i,n-2){ //Maximum value of i could be only n-3.
+        int j=i+1;
+        int k=n-1;
+    //Using Two pointer approache.
+    while(j<k){
+        int current_sum = arr[i];
+        current_sum+=arr[j];
+        current_sum+=arr[k];
+        if(current_sum==targetSum){
+            result.pb({arr[i],arr[j],arr[k]});
+            j++;
+            k--;
         }
+        else if(current_sum<targetSum) j++;
+        else k--;   
     }
+    }
+    return result;
 }
 
 int main(){
     cout<<"............................"<<endl;
     vi arr;
     int n,sum;
+    cin>>n>>sum;
     rep(i,n){
         int temp;
         cin>>temp;
         arr.pb(temp);
     }
     auto p = triplet(arr, sum);
-    if(p.size()==0) cout<<"NO SUCH TRIPLET EXISTS"<<endl;
+    if(p.size()==0) cout<<"NO SUCH TRIPLETS EXITS"<<endl;
     else{
-        rep(i,p.size()){
-            rep(j,p[i].size()){
-                cout<<p[i][j]<<",";
-            }
-            cout<<endl;
+ freach(v,p){
+        freach(no,v){
+            cout<<no<<",";
         }
+        cout<<endl;
+       }
     }
+      
+    
     return 0;
 }

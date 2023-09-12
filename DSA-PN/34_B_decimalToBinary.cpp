@@ -11,7 +11,7 @@ int decimalToBinary(int n){
     int i=0, ans=0;  
     while(n>0){
         int rem = n%2;
-        ans += rem*pow(10,i);
+        ans += (round)(rem*pow(10,i));
         n/=2;
         i++;
     }

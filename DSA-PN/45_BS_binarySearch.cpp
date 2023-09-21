@@ -17,7 +17,7 @@ int binarySearch(vi arr, int key){
         else if(key< arr[mid]) e = mid-1;
         else s = mid+1;
     }
-    return -1;
+    return -1 ;
 }
 int main(){
 

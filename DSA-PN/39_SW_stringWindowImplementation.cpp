@@ -17,7 +17,7 @@ string find_windows(string s, string p){
         
     //Sliding Window Algorithm
     int cnt = 0;
-    int start = 0; //left contraction
+    int start = 0;  //left contraction
     int start_idx = -1; //start index for best window
     int min_so_far = INT_MAX; //large number
     int window_size;
